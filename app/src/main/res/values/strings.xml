@@ -3,4 +3,7 @@
     <string name="addRoutineButton">Añadir</string>
     <string name="addRoutineInput">Título de tu rutina</string>
     <string name="routinesTextView">Rutinas</string>
+    <string name="InputEjercicio">Nombre del Ejercicio</string>
+    <string name="InputSeries">Nº Series</string>
+    <string name="InputRep">Nº Repeticiones</string>
 </resources>
