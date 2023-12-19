@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Training Manager</string>
-    <string name="addRoutineButton">Add</string>
-    <string name="addRoutineInput">Routine title</string>
-    <string name="routinesTextView">Routines</string>
-</resources>
