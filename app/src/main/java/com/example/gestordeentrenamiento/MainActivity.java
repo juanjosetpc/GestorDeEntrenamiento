@@ -5,9 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +38,22 @@ public class MainActivity extends AppCompatActivity {
         List<Sesion> sesiones = obtenerSesiones();
 
         // Crea un adaptador y configúralo en el RecyclerView
-        SesionAdapter adapter = new SesionAdapter(this, sesiones);
+        SesionAdapter adapter = new SesionAdapter(this, sesiones, new SesionAdapter.ItemClickerListener() {
+            @Override
+            public void onItemClick(Sesion sesiones) {
+                cambiarActividad(sesiones.getNombre());
+            }
+        });
         recyclerView.setAdapter(adapter);
+    }
+
+    private void cambiarActividad(String nombreRutina) {
+        // Creamos un Intent para especificar la actividad de destino.
+        Intent intent = new Intent(this, ActividadEjercicios.class);
+
+        intent.putExtra("clave_parametro", nombreRutina);
+
+        startActivity(intent);
     }
 
 
