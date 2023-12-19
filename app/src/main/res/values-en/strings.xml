@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Training Manager</string>
+    <string name="addRoutineButton">Add</string>
+    <string name="addRoutineInput">Routine Title</string>
+    <string name="routinesTextView">Routines</string>
+    <string name="InputEjercicio">Exercise Name</string>
+    <string name="InputSeries">Set number</string>
+    <string name="InputRep">Reps number</string>
+</resources>
