@@ -44,11 +44,25 @@ public class MainActivity extends AppCompatActivity {
         updateRoutineList();
 
         List<Sesion> sesiones = obtenerSesiones();
-
         // Crea un adaptador y configúralo en el RecyclerView
-        SesionAdapter adapter = new SesionAdapter(this, sesiones);
+        SesionAdapter adapter = new SesionAdapter(this, sesiones, new SesionAdapter.ItemClickerListener() {
+            @Override
+            public void onItemClick(Sesion sesiones) {
+                cambiarActividad(sesiones.getNombre());
+            }
+        });
         recyclerView.setAdapter(adapter);
     }
+
+    private void cambiarActividad(String nombreRutina) {
+        // Creamos un Intent para especificar la actividad de destino.
+        Intent intent = new Intent(this, ActividadEjercicios.class);
+
+        intent.putExtra("clave_parametro", nombreRutina);
+
+        startActivity(intent);
+    }
+
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
@@ -60,10 +74,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Lo que hay comentado abajo hay que revisar como adaptarlo con lo de juanma
     private void updateRoutineList() {
         List<Sesion> sesiones = obtenerSesiones();
-        SesionAdapter adapter = new SesionAdapter(this, sesiones);
-        recyclerView.setAdapter(adapter);
+        //SesionAdapter adapter = new SesionAdapter(this, sesiones);
+        //recyclerView.setAdapter(adapter);
     }
 
     public void  insertData(){
