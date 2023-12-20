@@ -34,7 +34,7 @@ public class SesionAdapter extends RecyclerView.Adapter<SesionAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Sesion sesion = sesiones.get(position);
-        holder.nombreTextView.setText(sesion.getNombre());
+        holder.nombreTextView.setText(sesion.getNombre() + "\n");
 
         holder.itemView.setOnClickListener(view -> {
             mItemListener.onItemClick(sesiones.get(position)); //toma la posicion del item que seleccionemos en el RecyclerView

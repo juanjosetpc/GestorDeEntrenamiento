@@ -8,4 +8,13 @@
     <string name="InputSeries">Set</string>
     <string name="InputRep">Reps</string>
     <string name="addExerciseButton">Add</string>
+    <string name="ToastNombreEj">Please enter an exercise name</string>
+    <string name="ToastRep">Please enter number of repetitions</string>
+    <string name="ToastSerie">Please enter number of sets</string>
+    <string name="ToastEjAñadido">Exercise added successfully</string>
+    <string name="Ejercicio">Exercise</string>
+    <string name="Series">Sets</string>
+    <string name="Repeticiones">Repetitions</string>
+    <string name="RutinaAñadida">Routine successfully added</string>
+    <string name="ToastRutinaNombre">Please enter a routine title</string>
 </resources>

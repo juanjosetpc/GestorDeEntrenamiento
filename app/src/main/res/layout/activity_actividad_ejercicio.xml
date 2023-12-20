@@ -8,14 +8,17 @@
 
     <TextView
         android:id="@+id/tNombreRutina"
-        android:layout_width="127dp"
+        android:layout_width="413dp"
         android:layout_height="35dp"
+        android:layout_marginLeft="60pt"
+        android:gravity="center"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/entradaNombreEjercicio"
@@ -59,28 +62,29 @@
         app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429" />
+        app:layout_constraintVertical_bias="0.392" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaDeEjercicios"
-        android:layout_width="299dp"
-        android:layout_height="191dp"
+        android:layout_width="293dp"
+        android:layout_height="366dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintTop_toBottomOf="@+id/entradaRepeticiones"
+        app:layout_constraintVertical_bias="0.686" />
 
     <Button
         android:id="@+id/buttonCrearEjercicio"
-        android:layout_width="140dp"
-        android:layout_height="75dp"
+        android:layout_width="94dp"
+        android:layout_height="49dp"
         android:onClick="onClick"
         android:text="@string/addExerciseButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintTop_toBottomOf="@+id/tNombreRutina"
+        app:layout_constraintVertical_bias="0.064" />
 </androidx.constraintlayout.widget.ConstraintLayout>

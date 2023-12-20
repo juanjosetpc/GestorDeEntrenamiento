@@ -106,12 +106,12 @@ public class Actividad_ejercicio extends AppCompatActivity {
         String series = inputSeries.getText().toString();
 
         if (nombreEjercicio.isEmpty() ) {
-            showToast("Por favor, ingresa un nombre de ejercicio");
+            showToast(getResources().getString(R.string.ToastNombreEj));
         } else if(reps.isEmpty()){
-            showToast("Por favor, ingresa numero repeticiones");
+            showToast(getResources().getString(R.string.ToastRep));
 
         }else  if(series.isEmpty()){
-            showToast("Por favor, ingresa numero series");
+            showToast(getResources().getString(R.string.ToastSerie));
         }else{
             ContentValues values = new ContentValues();
             values.put(GestorGymContract.TablaEjercicios.NOMBRE_SESION, textView.getText().toString());
@@ -120,7 +120,7 @@ public class Actividad_ejercicio extends AppCompatActivity {
             values.put(GestorGymContract.TablaEjercicios.REPETICIONES, series);
 
             db.insert(GestorGymContract.TablaEjercicios.TABLE_NAME, null,values);
-            showToast("Rutina añadida con éxito");
+            showToast(getResources().getString(R.string.ToastEjAñadido));
             updateRoutineList();
             inputSeries.setText("");
             inputRepeticiones.setText("");

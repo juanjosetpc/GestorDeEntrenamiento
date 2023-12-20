@@ -96,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
             ContentValues values = new ContentValues();
             values.put(GestorGymContract.TablaSesion.NOMBRE, name);
             db.insert(GestorGymContract.TablaSesion.TABLE_NAME, null,values);
-            showToast("Rutina añadida con éxito");
+            showToast(getResources().getString(R.string.RutinaAñadida));
             updateRoutineList();
             inputRoutineTitle.setText("");
         } else {
-            showToast("Por favor, ingresa un título de rutina");
+            showToast(getResources().getString(R.string.ToastRutinaNombre));
         }
         hideSoftKeyboard(inputRoutineTitle);
     }

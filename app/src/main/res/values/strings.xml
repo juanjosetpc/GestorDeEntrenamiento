@@ -7,4 +7,13 @@
     <string name="InputSeries">Series</string>
     <string name="InputRep">Repeticiones</string>
     <string name="addExerciseButton">Añadir</string>
+    <string name="ToastNombreEj">Por favor, ingresa un nombre de ejercicio</string>
+    <string name="ToastRep">Por favor, ingresa numero repeticiones</string>
+    <string name="ToastSerie">Por favor, ingresa numero series</string>
+    <string name="ToastEjAñadido">Ejercicio añadido con éxito</string>
+    <string name="Ejercicio">Ejercicio</string>
+    <string name="Series">Series</string>
+    <string name="Repeticiones">Repeticiones</string>
+    <string name="RutinaAñadida">Rutina añadida con éxito</string>
+    <string name="ToastRutinaNombre">Por favor, ingresa un título de rutina</string>
 </resources>
