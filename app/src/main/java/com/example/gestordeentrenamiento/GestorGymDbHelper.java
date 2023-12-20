@@ -23,8 +23,8 @@ public class GestorGymDbHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + GestorGymContract.TablaEjercicios.TABLE_NAME + " (" +
                     GestorGymContract.TablaEjercicios._ID + " INTEGER PRIMARY KEY," +
                     GestorGymContract.TablaEjercicios.NOMBRE + " TEXT UNIQUE," +
-                    GestorGymContract.TablaEjercicios.SERIES + " INTEGER," +
-                    GestorGymContract.TablaEjercicios.REPETICIONES + " INTEGER," +
+                    GestorGymContract.TablaEjercicios.SERIES + " TEXT," +
+                    GestorGymContract.TablaEjercicios.REPETICIONES + " TEXT," +
                     GestorGymContract.TablaEjercicios.NOMBRE_SESION + " TEXT" +
                     " )";
 

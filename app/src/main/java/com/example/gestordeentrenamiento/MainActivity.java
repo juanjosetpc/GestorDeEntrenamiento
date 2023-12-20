@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void cambiarActividad(String nombreRutina) {
         // Creamos un Intent para especificar la actividad de destino.
-        Intent intent = new Intent(this, ActividadEjercicios.class);
+        Intent intent = new Intent(this, Actividad_ejercicio.class);
 
         intent.putExtra("clave_parametro", nombreRutina);
 
@@ -77,8 +78,14 @@ public class MainActivity extends AppCompatActivity {
     //Lo que hay comentado abajo hay que revisar como adaptarlo con lo de juanma
     private void updateRoutineList() {
         List<Sesion> sesiones = obtenerSesiones();
-        //SesionAdapter adapter = new SesionAdapter(this, sesiones);
-        //recyclerView.setAdapter(adapter);
+
+        SesionAdapter adapter = new SesionAdapter(this, sesiones, new SesionAdapter.ItemClickerListener() {
+            @Override
+            public void onItemClick(Sesion sesiones) {
+                cambiarActividad(sesiones.getNombre());
+            }
+        });
+        recyclerView.setAdapter(adapter);
     }
 
     public void  insertData(){
@@ -95,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             showToast("Por favor, ingresa un título de rutina");
         }
+        hideSoftKeyboard(inputRoutineTitle);
     }
 
 
@@ -114,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
 
         return sesiones;
     }
-
+    private void hideSoftKeyboard(View v) {
+        InputMethodManager inputMethodManager;
+        inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
 
 }
