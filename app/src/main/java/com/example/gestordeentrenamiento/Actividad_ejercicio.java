@@ -36,23 +36,21 @@ public class Actividad_ejercicio extends AppCompatActivity {
         String parametroRecibido = getIntent().getStringExtra("clave_parametro");
 
 
-        textView =findViewById(R.id.tNombreRutina);
+        textView = (TextView) findViewById(R.id.tNombreRutina);
         textView.setText(parametroRecibido);
 
         dbHelper = new GestorGymDbHelper(getApplicationContext(), "misentrenos.db");
         db = dbHelper.getWritableDatabase();
 
-        recyclerView = findViewById(R.id.listaDeEjercicios);
+        recyclerView = (RecyclerView) findViewById(R.id.listaDeEjercicios);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        inputNombreEjercicio = findViewById(R.id.entradaNombreEjercicio);
-        inputRepeticiones = findViewById(R.id.entradaRepeticiones);
-        inputSeries=findViewById(R.id.entradaSeries);
+        inputNombreEjercicio = (EditText) findViewById(R.id.entradaNombreEjercicio);
+        inputRepeticiones = (EditText) findViewById(R.id.entradaRepeticiones);
+        inputSeries = (EditText) findViewById(R.id.entradaSeries);
 
-        //updateRoutineList();
 
         List<Ejercicio> ejercicios = obtenerEjercicios((String)textView.getText());
-        // Crea un adaptador y configúralo en el RecyclerView
         EjercicioAdapter adapter = new EjercicioAdapter(this, ejercicios);
 
 
@@ -61,7 +59,6 @@ public class Actividad_ejercicio extends AppCompatActivity {
     private List<Ejercicio> obtenerEjercicios(String nombreSesion) {
         List<Ejercicio> ejercicios = new ArrayList<>();
 
-        // Obtener los ejercicios asociados a la sesión
         String[] columnsEjercicio = {
                 GestorGymContract.TablaEjercicios.NOMBRE,
                 GestorGymContract.TablaEjercicios.SERIES,
@@ -107,11 +104,10 @@ public class Actividad_ejercicio extends AppCompatActivity {
 
         if (nombreEjercicio.isEmpty() ) {
             showToast(getResources().getString(R.string.ToastNombreEj));
-        } else if(reps.isEmpty()){
-            showToast(getResources().getString(R.string.ToastRep));
-
         }else  if(series.isEmpty()){
             showToast(getResources().getString(R.string.ToastSerie));
+        } else if(reps.isEmpty()){
+            showToast(getResources().getString(R.string.ToastRep));
         }else{
             ContentValues values = new ContentValues();
             values.put(GestorGymContract.TablaEjercicios.NOMBRE_SESION, textView.getText().toString());

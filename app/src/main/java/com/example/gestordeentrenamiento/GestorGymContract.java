@@ -8,7 +8,6 @@ public final class GestorGymContract {
     public static abstract class TablaSesion implements BaseColumns {
         public static final String TABLE_NAME = "Sesion";
         public static final String NOMBRE = "nombre";
-        //public static final String COLUMN_NAME_VAL = "valor";
     }
 
     public static abstract class TablaEjercicios implements BaseColumns {

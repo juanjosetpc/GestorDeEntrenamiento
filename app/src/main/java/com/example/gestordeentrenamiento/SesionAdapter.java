@@ -37,7 +37,7 @@ public class SesionAdapter extends RecyclerView.Adapter<SesionAdapter.ViewHolder
         holder.nombreTextView.setText(sesion.getNombre() + "\n");
 
         holder.itemView.setOnClickListener(view -> {
-            mItemListener.onItemClick(sesiones.get(position)); //toma la posicion del item que seleccionemos en el RecyclerView
+            mItemListener.onItemClick(sesiones.get(position));
         });
     }
 

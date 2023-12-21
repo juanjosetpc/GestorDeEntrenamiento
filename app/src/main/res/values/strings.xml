@@ -16,4 +16,5 @@
     <string name="Repeticiones">Repeticiones</string>
     <string name="RutinaAñadida">Rutina añadida con éxito</string>
     <string name="ToastRutinaNombre">Por favor, ingresa un título de rutina</string>
+    <string name="NombreSesion">Nombre de la sesion</string>
 </resources>

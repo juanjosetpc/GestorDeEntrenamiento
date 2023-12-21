@@ -37,15 +37,12 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new GestorGymDbHelper(getApplicationContext(), "misentrenos.db");
         db = dbHelper.getWritableDatabase();
 
-        recyclerView = findViewById(R.id.listRoutines);
+        recyclerView = (RecyclerView) findViewById(R.id.listRoutines);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        inputRoutineTitle = findViewById(R.id.inputRoutineTitle);
-
-        updateRoutineList();
+        inputRoutineTitle = (EditText) findViewById(R.id.inputRoutineTitle);
 
         List<Sesion> sesiones = obtenerSesiones();
-        // Crea un adaptador y configúralo en el RecyclerView
         SesionAdapter adapter = new SesionAdapter(this, sesiones, new SesionAdapter.ItemClickerListener() {
             @Override
             public void onItemClick(Sesion sesiones) {
@@ -56,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void cambiarActividad(String nombreRutina) {
-        // Creamos un Intent para especificar la actividad de destino.
         Intent intent = new Intent(this, Actividad_ejercicio.class);
 
         intent.putExtra("clave_parametro", nombreRutina);
@@ -75,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Lo que hay comentado abajo hay que revisar como adaptarlo con lo de juanma
     private void updateRoutineList() {
         List<Sesion> sesiones = obtenerSesiones();
 
@@ -106,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Método para obtener sesiones de la base de datos
     private List<Sesion> obtenerSesiones() {
         List<Sesion> sesiones = new ArrayList<>();
 

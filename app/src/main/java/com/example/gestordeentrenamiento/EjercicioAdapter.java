@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +15,8 @@ public class EjercicioAdapter extends RecyclerView.Adapter<EjercicioAdapter.View
 
     private List<Ejercicio> ejercicios;
     private LayoutInflater inflater;
-    private Context context; // Agregado el contexto
+    private Context context;
+
 
     public EjercicioAdapter(Context context, List<Ejercicio> ejercicios) {
         this.context = context;

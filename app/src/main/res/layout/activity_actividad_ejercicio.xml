@@ -18,12 +18,13 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <EditText
         android:id="@+id/entradaNombreEjercicio"
-        android:layout_width="193dp"
-        android:layout_height="50dp"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:autoSizeTextType="uniform"
         android:ems="10"
         android:hint="@string/InputEjercicio"
         android:inputType="text"
@@ -34,46 +35,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.132" />
 
-    <EditText
-        android:id="@+id/entradaSeries"
-        android:layout_width="286dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="56dp"
-        android:ems="10"
-        android:hint="@string/InputSeries"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.264"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
-
-    <EditText
-        android:id="@+id/entradaRepeticiones"
-        android:layout_width="317dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="36dp"
-        android:ems="10"
-        android:hint="@string/InputRep"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaDeEjercicios"
         android:layout_width="293dp"
         android:layout_height="366dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entradaRepeticiones"
-        app:layout_constraintVertical_bias="0.686" />
+        app:layout_constraintTop_toBottomOf="@+id/entradaRepeticiones" />
 
     <Button
         android:id="@+id/buttonCrearEjercicio"
@@ -87,4 +58,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tNombreRutina"
         app:layout_constraintVertical_bias="0.064" />
+
+    <EditText
+        android:id="@+id/entradaSeries"
+        android:layout_width="184dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="@string/InputSeries"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <EditText
+        android:id="@+id/entradaRepeticiones"
+        android:layout_width="191dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="@string/InputRep"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.352" />
 </androidx.constraintlayout.widget.ConstraintLayout>
